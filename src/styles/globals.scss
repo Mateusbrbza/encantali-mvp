@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+html {
+  // 62.5% of 16px = 10px
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: $beige;
+  font-family: "Montserrat";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
