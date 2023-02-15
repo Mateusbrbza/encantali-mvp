@@ -11,8 +11,9 @@ const Home = () => {
   const { products } = useContext(ProductContext);
   // get only mens & woman clothing category
   const filteredProducts: Product[] = products.filter((item: Product) => {
-    return item.category === "men's clothing" 
-      || item.category === "women's clothing";
+    return ( item.category === "men's clothing" 
+      || item.category === "women's clothing" 
+      );
   });
 
   return (
@@ -20,7 +21,7 @@ const Home = () => {
     <Header />
 
     <div>
-      <section className={styles.home}>
+      <section>
         <div>
           <div>
             {filteredProducts.map((product: Product) => {
