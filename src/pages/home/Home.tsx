@@ -4,6 +4,7 @@ import Footer from '../../components/footer/Footer';
 import Sidebar from '../../components/sidebar/Sidebar';
 import { ProductContext, Product } from '../../contexts/ProductContext';
 import styles from "./Home.module.scss";
+import Products from '../../components/product/Products';
 
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
         <div>
           <div>
             {filteredProducts.map((product: Product) => {
-              return <div key={product.id}>{product.title}</div>
+              return <Products key={product.id} />
             })
             }
           </div>
@@ -39,4 +40,11 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
+
+
+// {filteredProducts.map((product: Product) => {
+//               return <div className='w-full h-[300px]'
+//               key={product.id}>{product.title}</div>
+//             })
+//             }

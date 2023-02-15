@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/globals.scss";
+import "@/styles/globals.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-//pages
 import Home from "./pages/home/Home";
 import ProductDetail from "./pages/product-detail/ProductDetail";
-// product provider
 import ProductProvider from "./contexts/ProductContext";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
