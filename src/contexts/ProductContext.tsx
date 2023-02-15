@@ -1,7 +1,15 @@
 import React, {createContext, ReactNode, useState, useEffect} from 'react';
 
-export const ProductContext = createContext<any>(null);
+export interface Product {
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    description: string;
+    image: string;
+    }
 
+export const ProductContext = createContext<any>(null);
 // products props
 interface Props {
   children: ReactNode;
@@ -9,22 +17,11 @@ interface Props {
 
 // products provider 
 const ProductProvider = ({ children }: Props) => {
-  const contextValue = {
-    products: [8],
-    selectedProduct: {},
-    updateSelectedProduct: () => {},
-  }
-
   // products state
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   //fetch products
   useEffect(() => {
-    interface Product {
-    id: number;
-    name: string;
-    price: number;
-    }
 
     const fetchProducts = async (): Promise<Product[]> => {
       const response = await fetch('https://fakestoreapi.com/products');
@@ -36,7 +33,13 @@ const ProductProvider = ({ children }: Props) => {
       return data as Product[];
     };
     fetchProducts();
-  });
+  }, []);
+
+  const contextValue = {
+    products,
+    selectedProduct: {},
+    updateSelectedProduct: () => {},
+  }
 
   return (
     <ProductContext.Provider value={contextValue}>
