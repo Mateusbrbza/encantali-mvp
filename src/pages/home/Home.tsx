@@ -28,7 +28,7 @@ const Home = () => {
               {filteredProducts.map((product: Product) => {
                 return (
                   <div className={styles.card}>
-                    <Products key={product.id} />
+                    <Products product={product} key={product.id} />
                   </div>
                 )
               })
@@ -45,10 +45,3 @@ const Home = () => {
 }
 
 export default Home;
-
-
-// {filteredProducts.map((product: Product) => {
-//               return <div className='w-full h-[300px]'
-//               key={product.id}>{product.title}</div>
-//             })
-//             }
