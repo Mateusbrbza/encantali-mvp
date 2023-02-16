@@ -22,15 +22,19 @@ const Home = () => {
     <Header />
 
     <div>
-      <section>
-        <div>
-          <div>
-            {filteredProducts.map((product: Product) => {
-              return <Products key={product.id} />
-            })
-            }
+      <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.row}>
+              {filteredProducts.map((product: Product) => {
+                return (
+                  <div className={styles.card}>
+                    <Products key={product.id} />
+                  </div>
+                )
+              })
+              }
+            </div>
           </div>
-        </div>
       </section>
     </div>
 

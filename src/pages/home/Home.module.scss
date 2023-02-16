@@ -1,1 +1,37 @@
 @import "@/styles/variables.scss";
+
+.section {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem 2.5rem;
+  }
+
+  .row {
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    // para determinar numero de produtos na coluna
+    grid-template-areas: "a b c d";
+  }
+
+  .card {
+    margin: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    
+    align-self: normal;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+  }
+}
