@@ -3,13 +3,11 @@
 .section {
   padding: 4rem 2rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  border-radius: 0 0 3rem 3rem;
+  background: $beige;
 
   .container {
-    display: flex;
-    flex-direction: row;
     padding: 5rem 2.5rem;
   }
 
@@ -24,8 +22,9 @@
 
   .card {
     margin: 1rem 2rem;
-    background: #fff;
+    background:  #FAF9F6;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: $green;
     
     align-self: normal;
     flex-direction: column;
