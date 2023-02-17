@@ -37,8 +37,8 @@ const Products = ({ product }: { product: Product }) => {
       </div>
       <div className={styles.bottom}>
         <button className={styles.button}>
-          <div>
-            <BsPlus className={styles.icon} />
+          <div className={styles.icon}>
+            <BsPlus />
           </div>
         </button>
         <Link to={`/products/${id}`} className={styles.eye} >
