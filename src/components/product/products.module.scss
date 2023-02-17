@@ -9,16 +9,27 @@
 
     .bottom {
         display: flex;
-        gap: 1rem;
+        border: none;
+        cursor: pointer;
+        
+        .button {
+            background-color: $green;    
+            padding: 1rem 1.5rem;       
+            color: $white;
 
-        // figure out how to style this icon
-        .icon {
-            
+            .icon {
+                align-self: center;
+                font-size: 2rem;
+                line-height: 2.4rem;
+            }
+        
         }
         
         .eye {
-            padding: 1.2rem 1.5rem;
-            
+            align-self: center;
+            font-size: 2rem;
+            line-height: 2.3rem;
+            padding: 1rem 1.5rem;
             color: $green;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
@@ -37,8 +48,6 @@
             border-radius: 1rem;
         }
     }
-
-    .eye {}
     
     .info {
         span {

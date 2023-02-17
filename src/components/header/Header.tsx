@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import Sidebar from '../sidebar/Sidebar';
-import {BsBag} from 'react-icons/bs';
 import { SidebarContext } from '../../contexts/SidebarContext';
 
 const Header: React.FC = () => {

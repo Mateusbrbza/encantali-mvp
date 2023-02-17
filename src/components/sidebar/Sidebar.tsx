@@ -25,17 +25,21 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
 
         <button className={styles["toggle-btn"]} onClick={handleToggle}>
         {/* sidebar-opn */}
-        <BsBag className={styles.bag} />
+        <div className={styles.icon}>
+            <BsBag />
+        </div>
         </button>
         {isOpen && (
             <div className={styles.sidebar}>
                 <button className={styles["close-btn"]} onClick={handleClose}>
                     {/* sidebar closed */}
-                    <BsBag className={styles.bag} />
+                    <div className={styles.icon}>
+                        <BsBag />
+                    </div>
                 </button>
             </div>
         )}
-        
+
       </section>
     </>
   );

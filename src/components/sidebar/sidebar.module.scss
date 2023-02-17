@@ -3,32 +3,34 @@
 .section {
 
   .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 30rem;
-  height: 100%;
-  z-index: 100;
-  padding: 2rem;
-  box-sizing: border-box;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    height: 100%;
+    z-index: 100;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
 
-close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
+  // chore: style the icon in this component
 
-toggle-btn {
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-  margin: 1rem;
-}
+  close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  toggle-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin: 1rem;
+  }
 }
