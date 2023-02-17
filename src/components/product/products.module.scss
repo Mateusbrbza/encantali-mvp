@@ -1,1 +1,62 @@
 @import "@/styles/variables.scss";
+
+.cardbox {
+    align-self: normal;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 2.1rem;
+
+    .bottom {
+        display: flex;
+        gap: 1rem;
+
+        .icon {
+            
+        }
+        
+        .eye {
+            padding: 1.2rem 1.5rem;
+            
+            color: $green;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+
+        img {
+            height: 30rem;
+            width: 25rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+        }
+    }
+
+    .eye {}
+    
+    .info {
+        span {
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $green;
+            font-family: Montserrat;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            font-family: "Montserrat";
+        }
+        p {
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
+    }
+}

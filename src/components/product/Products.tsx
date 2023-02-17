@@ -12,7 +12,7 @@ const Products = ({ product }: { product: Product }) => {
   useEffect(() => {
     // call fetchProducts when the component mounts to update the product list
     fetchProducts();
-  }, [fetchProducts]);
+  }, []);
 
   // console.log(data);
 
@@ -21,27 +21,29 @@ const Products = ({ product }: { product: Product }) => {
   return (
     <div className={styles.cardbox}>
       <div>
-        {/* image */}
+        <div className={styles.image}>
+          {/* image */}
           <img src={image} alt="produto" />
-        {/* buttons */}
-        <div>
-          <button className={styles.button}>
-            <div>
-              <BsPlus className={styles.icon} />
-            </div>
-          </button>
-          <Link to={`/products/${id}`} >
-            <BsEyeFill />
-          </Link>
         </div>
+        {/* buttons */}
       </div>
       {/* category & title & price */}
-      <div>
+      <div className={styles.info}>
         <span>{category}</span>
         <Link to={`/products/${id}`} >
           <h2>{title}</h2>
         </Link>
-        <p>$ {price}</p>
+        <p>R$ {price}</p>
+      </div>
+      <div className={styles.bottom}>
+        <button className={styles.button}>
+          <div>
+            <BsPlus className={styles.icon} />
+          </div>
+        </button>
+        <Link to={`/products/${id}`} className={styles.eye} >
+          <BsEyeFill />
+        </Link>
       </div>
     </div>
   )

@@ -17,7 +17,14 @@
     align-items: center;
     justify-content: space-between;
     // para determinar numero de produtos na coluna
-    grid-template-areas: "a b c d";
+
+    @include md {
+      grid-template-areas: "a b";
+    }
+
+    @include lg {
+      grid-template-areas: "a b c";
+    }
   }
 
   .card {
