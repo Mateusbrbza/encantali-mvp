@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {BsPlus, BsEyeFill} from 'react-icons/bs';
+import {BsEyeFill} from 'react-icons/bs';
+import { GrAdd } from 'react-icons/gr'
 import { ProductContext, Product } from '../../contexts/ProductContext';
 import styles from "./products.module.scss";
 
@@ -38,7 +39,7 @@ const Products = ({ product }: { product: Product }) => {
       <div className={styles.bottom}>
         <button className={styles.button}>
           <div className={styles.icon}>
-            <BsPlus />
+            <GrAdd />
           </div>
         </button>
         <Link to={`/products/${id}`} className={styles.eye} >

@@ -5,8 +5,11 @@ import { IoMdArrowForward } from 'react-icons/io';
 import { FiTrash2 } from 'react-icons/fi';
 import CartItem from '../cart-item/CartItem';
 import {BsBag} from 'react-icons/bs';
-import { SidebarContext } from '../../contexts/SidebarContext';
 import styles from './Sidebar.module.scss';
+
+//contexts
+import { SidebarContext } from '../../contexts/SidebarContext';
+import { CartContext } from '../../contexts/CartContext'; 
 
 interface SidebarProps {
   // Any additional props that you need
@@ -14,34 +17,36 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
   const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
+  console.log(useContext(CartContext));
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <>
-      <section className={styles.section}>
-
-        <button className={styles["toggle-btn"]} onClick={handleToggle}>
+    <section className={styles.section}>
+        <div className={styles["toggle-btn"]} onClick={handleToggle}>
         {/* sidebar-opn */}
-        <div className={styles.icon}>
-            <BsBag />
+          <button className={styles.button}>
+            <div className={styles.icon}>
+              <BsBag />
+            </div>
+          </button>
         </div>
-        </button>
+        
         {isOpen && (
-            <div className={styles.sidebar}>
-                <button className={styles["close-btn"]} onClick={handleClose}>
-                    {/* sidebar closed */}
-                    <div className={styles.icon}>
-                        <BsBag />
-                    </div>
-                </button>
+          <div className={styles.sidebar}>
+            <div className={styles["close-btn"]} onClick={handleClose}>
+              {/* sidebar closed */}
+              <button className={styles.button}>
+                <div className={styles.icon}>
+                  <BsBag />
+                </div>
+              </button>
+            </div>
             </div>
         )}
-
-      </section>
-    </>
+    </section>
   );
 };
 
