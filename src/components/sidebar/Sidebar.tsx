@@ -1,20 +1,20 @@
 import React, { useContext } from 'react';
-
 import { Link } from 'react-router-dom';
+import styles from './Sidebar.module.scss';
+
 import CartItem from '../cart-item/CartItem';
 import {BsBag} from 'react-icons/bs';
-import styles from './Sidebar.module.scss';
+
 
 //contexts
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { CartContext } from '../../contexts/CartContext'; 
 
-interface SidebarProps {
-  // Any additional props that you need
-}
+interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
   const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
+  const { cart } = useContext(CartContext);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -43,7 +43,12 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                 </div>
               </button>
             </div>
-            <div>Itens</div>
+            <div>
+              {cart.map((item) => {
+                return <CartItem {...item} key={item.id} />
+              })
+              }
+            </div>
             </div>
         )}
     </section>

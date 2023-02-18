@@ -20,7 +20,7 @@ const Products = ({ product }: { product: Product }) => {
   useEffect(() => {
     // call fetchProducts when the component mounts to update the product list
     fetchProducts(); 
-  }, [fetchProducts]);
+  }, []);
 
   // console.log(data);
 
@@ -35,6 +35,7 @@ const Products = ({ product }: { product: Product }) => {
         </div>
         {/* buttons */}
       </div>
+
       {/* category & title & price */}
       <div className={styles.info}>
         <span>{category}</span>
@@ -43,6 +44,7 @@ const Products = ({ product }: { product: Product }) => {
         </Link>
         <p>R$ {price}</p>
       </div>
+
       <div className={styles.bottom}>
         <button className={styles.button}
         onClick={() => addToCart(product)}
@@ -51,6 +53,7 @@ const Products = ({ product }: { product: Product }) => {
             <GrAdd />
           </div>
         </button>
+        
         <Link to={`/products/${id}`} className={styles.eye} >
           <BsEyeFill />
         </Link>
