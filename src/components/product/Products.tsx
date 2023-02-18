@@ -20,7 +20,7 @@ const Products = ({ product }: { product: Product }) => {
   useEffect(() => {
     // call fetchProducts when the component mounts to update the product list
     fetchProducts(); 
-  }, []);
+  }, [fetchProducts]);
 
   // console.log(data);
 
