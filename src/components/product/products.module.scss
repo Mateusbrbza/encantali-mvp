@@ -13,11 +13,11 @@
         
         .button {
             background-color: $green;    
-            padding: 1rem 1.5rem;       
-            color: $white;
+            padding: 1rem 1.5rem;
             cursor: pointer;
 
             .icon {
+                color: $white;
                 align-self: center;
                 font-size: 2rem;
                 line-height: 2.4rem;
