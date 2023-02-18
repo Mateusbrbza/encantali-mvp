@@ -9,12 +9,12 @@ const Header: React.FC = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.header}>
-        Header
+        {/* Header */}
       </div>
       <div className={styles.sidebar}>
         <Sidebar />
       </div>
-      {/* {isOpen && <Sidebar />} */}
+      {isOpen}
     </header>
   );
 };
