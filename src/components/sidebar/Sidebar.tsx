@@ -17,7 +17,6 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
   const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
-  console.log(useContext(CartContext));
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
