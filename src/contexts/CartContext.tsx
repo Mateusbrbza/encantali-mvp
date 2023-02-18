@@ -25,13 +25,16 @@ export const CartContext = createContext<CartContextType>({
 });
 
 const CartProvider = ({children}: Props) => {
+
   //cart state
   const [cart, setCart] = useState<CartItemType[]>([]);
+
   //add to cart
   const addToCart = (product: Product) => {
     const { id, title, price, image } = product;
     const newItem = { id, title, price, image, amount: 1 };
     const cartItem = cart.find((item) => item.id === id);
+
     // if cart item is already in the cart
     if (cartItem) {
       const newCart = cart.map((item) =>
@@ -42,6 +45,7 @@ const CartProvider = ({children}: Props) => {
       setCart([...cart, newItem]);
     }
   };
+  
   console.log(cart);
 
   return (
