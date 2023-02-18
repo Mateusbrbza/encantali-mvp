@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CartItem = () => {
   return (
@@ -6,4 +6,4 @@ const CartItem = () => {
   )
 }
 
-export default CartItem
+export default CartItem;
