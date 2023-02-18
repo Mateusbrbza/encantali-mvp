@@ -1,8 +1,6 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
-import { IoMdArrowForward } from 'react-icons/io';
-import { FiTrash2 } from 'react-icons/fi';
 import CartItem from '../cart-item/CartItem';
 import {BsBag} from 'react-icons/bs';
 import styles from './Sidebar.module.scss';
@@ -30,6 +28,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles.icon}>
               <BsBag />
             </div>
+            <p>carrinho (0)</p>
           </button>
         </div>
         
@@ -37,12 +36,14 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
           <div className={styles.sidebar}>
             <div className={styles["close-btn"]} onClick={handleClose}>
               {/* sidebar closed */}
+              <span>Carrinho (0)</span>
               <button className={styles.button}>
                 <div className={styles.icon}>
                   <BsBag />
                 </div>
               </button>
             </div>
+            <div>Itens</div>
             </div>
         )}
     </section>

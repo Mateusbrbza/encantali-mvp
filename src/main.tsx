@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 //pages
 import Home from "./pages/home/Home";
 import ProductDetail from "./pages/product-detail/ProductDetail";

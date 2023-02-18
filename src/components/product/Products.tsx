@@ -19,7 +19,7 @@ const Products = ({ product }: { product: Product }) => {
 
   useEffect(() => {
     // call fetchProducts when the component mounts to update the product list
-    fetchProducts();
+    fetchProducts(); 
   }, []);
 
   // console.log(data);
@@ -45,7 +45,7 @@ const Products = ({ product }: { product: Product }) => {
       </div>
       <div className={styles.bottom}>
         <button className={styles.button}
-        onClick={() => addToCart()}
+        onClick={() => addToCart(product)}
         >
           <div className={styles.icon}>
             <GrAdd />
