@@ -1,5 +1,7 @@
 import React, {useContext} from 'react';
 import Sidebar from '../sidebar/Sidebar';
+import { Link } from 'react-router-dom';
+import Home from '../../pages/home/Home';
 import { SidebarContext } from '../../contexts/SidebarContext';
 import styles from './Header.module.scss';
 

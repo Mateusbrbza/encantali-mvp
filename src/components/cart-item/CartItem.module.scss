@@ -1,1 +1,13 @@
 @import "@/styles/variables.scss";
+
+.Cart {
+
+    .card {
+        .image {
+            height: 20rem;
+            width: 15rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+        }
+    }
+}

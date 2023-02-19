@@ -1,7 +1,7 @@
 import React, {createContext, useState, ReactNode } from 'react';
 import { Product } from './ProductContext';
 
-type CartItemType = {
+export type CartItemType = {
   id: number;
   title: string;
   price: number;

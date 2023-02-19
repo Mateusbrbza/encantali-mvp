@@ -45,9 +45,8 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             </div>
             <div>
               {cart.map((item) => {
-                return <CartItem {...item} key={item.id} />
-              })
-              }
+                return <CartItem item={item} key={item.id} />
+              })}
             </div>
             </div>
         )}
