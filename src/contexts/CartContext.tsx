@@ -46,7 +46,7 @@ const CartProvider = ({children}: Props) => {
     }
   };
   
-  console.log(cart);
+  //remove from cart function
 
   return (
     <CartContext.Provider value={{ cart, addToCart }}>
