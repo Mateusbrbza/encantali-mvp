@@ -28,7 +28,8 @@ const Products = ({ product }: { product: Product }) => {
 
   return (
     <div className={styles.cardbox}>
-      <div>
+      <div className={styles.contents}>
+        <div>
         <div className={styles.image}>
           {/* image */}
           <img src={image} alt="produto" />
@@ -50,13 +51,14 @@ const Products = ({ product }: { product: Product }) => {
         onClick={() => addToCart(product)}
         >
           <div className={styles.icon}>
-            <GrAdd />
+            <span>Adicionar ao carrinho +</span>
           </div>
         </button>
         
         <Link to={`/product/${id}`} className={styles.eye} >
           <BsEyeFill />
         </Link>
+      </div>
       </div>
     </div>
   )
