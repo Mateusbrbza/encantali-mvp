@@ -14,43 +14,39 @@ const CartItem: React.FC<Props> = ({ item }) => {
   const {id, title, image, price, amount} = item;
 
   return (
-    <div className={styles.cart}>
-      <div className={styles.card}>
-        {/* image */}
-        <Link to={`/product/${id}`}>
-          <img className={styles.image} src={image} alt={title} />
+    <div className={styles.cartItem}>
+      <Link to={`/product/${id}`} className={styles.cartItemImage}>
+        <img src={image} alt={title} />
+      </Link>
+      <div className={styles.cartItemContent}>
+        <Link to={`/product/${id}`} className={styles.cartItemTitle}>
+          {title}
         </Link>
-
-        <div className={styles.text}>
-          {/* remove icon */}
-          <div className={styles.icon}>
-            <IoMdClose className={styles.close} />
+        <div className={styles.cartItemActions}>
+          <div className={styles.cartItemAmount}>
+            <button className={styles.cartItemAmountButton} onClick={() => {}}>
+              <IoMdRemove />
+            </button>
+            <span>{amount}</span>
+            <button className={styles.cartItemAmountButton} onClick={() => {}}>
+              <IoMdAdd />
+            </button>
           </div>
-          
-          {/* title */}
-          <div className={styles.description}>
-            {/* titulo do item  */}
-            <Link to={`/product/${id}`}>
-              {title}
-            </Link>
-
-            {/* botoes + e - */}
-            <div><IoMdRemove /></div>
-            <div><IoMdAdd /></div>
-
-            {/* quantidade */}
-            <div>Qtd: {amount} </div>
-
-            {/* precos */}
-            <div>R$ {price}</div>
-
-            {/* Total item */}
-            <div>Total: {`R$ ${item.price * amount}`} </div>
+          <div className={styles.cartItemPrice}>
+            <span>R$ {price}</span>
           </div>
+          <div className={styles.cartItemRemove}>
+            <button className={styles.cartItemRemoveButton} onClick={() => {}}>
+              <IoMdClose />
+            </button>
+          </div>
+        </div>
+        <div className={styles.cartItemTotal}>
+          <span>Total: R$ {price * amount}</span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CartItem;
