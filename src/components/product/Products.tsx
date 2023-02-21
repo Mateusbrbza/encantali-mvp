@@ -39,7 +39,7 @@ const Products = ({ product }: { product: Product }) => {
       {/* category & title & price */}
       <div className={styles.info}>
         <span>{category}</span>
-        <Link to={`/products/${id}`} >
+        <Link to={`/product/${id}`} >
           <h2>{title}</h2>
         </Link>
         <p>R$ {price}</p>
@@ -54,7 +54,7 @@ const Products = ({ product }: { product: Product }) => {
           </div>
         </button>
         
-        <Link to={`/products/${id}`} className={styles.eye} >
+        <Link to={`/product/${id}`} className={styles.eye} >
           <BsEyeFill />
         </Link>
       </div>
