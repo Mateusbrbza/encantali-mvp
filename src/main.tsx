@@ -47,9 +47,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <SidebarProvider>
     <CartProvider>
       <ProductProvider>
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
+        <React.StrictMode>
+          <RouterProvider router={router} />
+        </React.StrictMode>
     </ProductProvider>
     </CartProvider>
   </SidebarProvider>
