@@ -28,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles.icon}>
               <BsBag />
             </div>
-            <p>carrinho (0)</p>
+            <p>Carrinho (0)</p>
           </button>
         </div>
         
@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles["close-btn"]} onClick={handleClose}>
               {/* sidebar closed */}
               <button className={styles.button}>
-                <span>Carrinho (0) {' '} </span>
+                <span>Itens no carrinho (0) </span>
                 <div className={styles.icon}>
                   <BsBag className={styles['sidebar-close']} />
                 </div>
