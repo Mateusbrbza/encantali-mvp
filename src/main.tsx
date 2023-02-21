@@ -3,7 +3,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //pages
 import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import Products from "./pages/products/Products";
 import ProductDetail from "./pages/product-detail/ProductDetail";
+import Profile from "./pages/profile/Profile";
 import "@/styles/globals.scss";
 //providers
 import ProductProvider from "./contexts/ProductContext";
@@ -18,6 +22,22 @@ const router = createBrowserRouter([
   {
     path: "/product/:id",
     element: <ProductDetail />,
+  },
+  {
+    path: "/products",
+    element: <Products />,
+  },
+  {
+    path: "/about",
+    element: <About />
+  },
+  {
+    path: "/contact",
+    element: <Contact />
+  },
+  {
+    path: "/profile",
+    element: <Profile />
   },
 ]);
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 
 import CartItem from '../cart-item/CartItem';

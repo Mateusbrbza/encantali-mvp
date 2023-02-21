@@ -1,14 +1,27 @@
 @import "@/styles/variables.scss";
 
-.navbar {
-    background-color: white;
-    position: sticky;
+.header {
+    width: 100%;
+    position: fixed;
     top: 0;
+    left: 0;
+    background-color: white;
     display: flex;
     flex-direction: column;
+    z-index: 100;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 
-    .header {}
+    .icon {
+        margin-left: 1rem;
+    }
 
-    .sidebar {}
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    // change the styles of the header on mobile
 }
