@@ -22,10 +22,6 @@ const Products = ({ product }: { product: Product }) => {
     fetchProducts(); 
   }, []);
 
-  // console.log(data);
-
-  // destructure product
-
   return (
     <div className={styles.cardbox}>
       <div className={styles.contents}>
@@ -48,7 +44,7 @@ const Products = ({ product }: { product: Product }) => {
 
       <div className={styles.bottom}>
         <button className={styles.button}
-        onClick={() => addToCart(product)}
+        onClick={() => addToCart(product, id)}
         >
           <div className={styles.icon}>
             <span>Adicionar ao carrinho +</span>

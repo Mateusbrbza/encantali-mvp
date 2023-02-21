@@ -15,14 +15,18 @@ const CartItem: React.FC<Props> = ({ item }) => {
 
   return (
     <div className={styles.cartItem}>
+
       <Link to={`/product/${id}`} className={styles.cartItemImage}>
         <img src={image} alt={title} />
       </Link>
+      
       <div className={styles.cartItemContent}>
+
         <Link to={`/product/${id}`} className={styles.cartItemTitle}>
           {title}
         </Link>
         <div className={styles.cartItemActions}>
+
           <div className={styles.cartItemAmount}>
             <button className={styles.cartItemAmountButton} onClick={() => {}}>
               <IoMdRemove />
@@ -32,18 +36,23 @@ const CartItem: React.FC<Props> = ({ item }) => {
               <IoMdAdd />
             </button>
           </div>
+
           <div className={styles.cartItemPrice}>
             <span>R$ {price}</span>
           </div>
+
           <div className={styles.cartItemRemove}>
             <button className={styles.cartItemRemoveButton} onClick={() => {}}>
               <IoMdClose />
             </button>
           </div>
+
         </div>
+
         <div className={styles.cartItemTotal}>
           <span>Total: R$ {price * amount}</span>
         </div>
+
       </div>
     </div>
   );

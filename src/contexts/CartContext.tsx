@@ -12,6 +12,7 @@ export type CartItemType = {
 type CartContextType = {
   cart: CartItemType[];
   addToCart: (product: Product) => void;
+  removeFromCart: (product: Product) => void;
 };
 
 interface Props {
@@ -21,7 +22,8 @@ interface Props {
 // create context
 export const CartContext = createContext<CartContextType>({
   cart: [], 
-  addToCart: () => {} 
+  addToCart: () => {},
+  removeFromCart: () => {}
 });
 
 const CartProvider = ({children}: Props) => {
@@ -46,10 +48,15 @@ const CartProvider = ({children}: Props) => {
     }
   };
   
-  //remove from cart function
+  //remove from cart
+  const removeFromCart = (product: Product) => {
+    const { id } = product;
+    const newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
+  }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   )
