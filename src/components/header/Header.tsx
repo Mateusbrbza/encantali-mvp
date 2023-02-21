@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className={styles.item}>
-          {/* About */}
+          {/* About us */}
           <a href='/about'>Sobre nós</a>
         </div>
 

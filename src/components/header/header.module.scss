@@ -5,21 +5,57 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: $white;
     z-index: 100;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 
     .navbar {
-        height: calc(5rem + 1.5rem);
         display: flex;
         align-items: center;
         justify-content: space-between;
         align-items: center;
         column-gap: 1rem;
+        padding: 0 2rem;
+
+        @media (max-width: 768px) {
+            // Mobile styles
+            padding: 0 1rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+
+            &:hover {
+                color: $green;
+            }
+
+            @media (max-width: 768px) {
+                // Mobile styles
+                font-size: 1.5rem;
+            }
+        }
 
         .item {
             display: flex;
             column-gap: 2rem;
+
+            a {
+            font-size: 1.2rem;
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+            color: $green;
+            }
+
+            @media (max-width: 768px) {
+            // Mobile styles
+            font-size: 1rem;
+            }
+        }
         }
     }
     // change the styles of the header on mobile
