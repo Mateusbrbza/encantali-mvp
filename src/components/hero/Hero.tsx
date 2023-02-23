@@ -1,4 +1,5 @@
 import React from 'react'
+// hero
 
 const Hero = () => {
   return (
