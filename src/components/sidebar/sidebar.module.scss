@@ -11,6 +11,29 @@
   align-items: center;
 }
 
+.cartInfo {
+  display: grid;
+  justify-content: grid;
+  gap: 1.2rem;
+
+  .cartTotal {}
+
+  .payment {
+    .paymentText {
+      border: 1px solid #ddd;
+      border-radius: 1.1rem;
+      background-color: $white;
+      padding: 1rem 0.5rem;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+    }
+  }
+}
+
 .button {
   display: flex;
   background-color: transparent;
@@ -18,6 +41,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   font-size: 1.2rem;
   color: #333;
   transition: all 0.2s ease-in-out;
@@ -69,7 +94,9 @@
   }
 
   p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: $green;
     margin: 0;
   }
 }

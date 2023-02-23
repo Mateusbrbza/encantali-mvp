@@ -26,8 +26,8 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
     if (cart.length >= 1) {
       return (
         <div className={styles.payment}>
-          <a href="/profile/payment">
-            <p>Finalizar compra</p>
+          <a href="/profile/payment" className={styles.paymentText}>
+            Finalizar compra
           </a>
         </div>
       );
@@ -67,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
               <div className={styles.cartInfo}>
                 {/* total */}
                 <div className={styles.cartTotal}>
-                  <span>Total: R$ {totalPrice.toFixed(0)}</span>
+                  <p>Valor total: R$ {totalPrice.toFixed(0)}</p>
                 </div>
                 {/* finalizar compra */}
                 <div className={styles.payment}>
