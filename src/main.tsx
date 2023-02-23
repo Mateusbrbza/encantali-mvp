@@ -15,6 +15,7 @@ import "@/styles/globals.scss";
 import ProductProvider from "./contexts/ProductContext";
 import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
+import Payment from "./pages/payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />
+  },
+  {
+    path: "/profile/payment",
+    element: <Payment />
   },
 ]);
 

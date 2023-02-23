@@ -22,6 +22,19 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
     setIsOpen(!isOpen);
   };
 
+  const renderPayment = () => {
+    if (cart.length >= 1) {
+      return (
+        <div className={styles.payment}>
+          <a href="/profile/payment">
+            <p>Finalizar compra</p>
+          </a>
+        </div>
+      );
+    }
+    return null;
+  }
+
   return (
     <section className={styles.section}>
         <div className={styles["toggle-btn"]} onClick={handleToggle}>
@@ -30,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles.icon}>
               <BsBag />
             </div>
-            <p>Carrinho ({cart.length})</p>
+            <p className={styles.cartNumber}>{cart.length}</p>
           </button>
         </div>
         
@@ -57,8 +70,8 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                   <span>Total: R$ {totalPrice.toFixed(0)}</span>
                 </div>
                 {/* finalizar compra */}
-                <div>
-                  <span>Finalizar compra</span>
+                <div className={styles.payment}>
+                  {renderPayment()}
                 </div>
               </div>
             </div>
