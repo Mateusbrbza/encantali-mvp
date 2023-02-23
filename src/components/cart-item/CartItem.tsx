@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './CartItem.module.scss';
 
 import { Link } from 'react-router-dom';
-import { CartItemType } from '../../contexts/CartContext';
+import { CartItemType, CartContext } from '../../contexts/CartContext';
 //icons
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
 
@@ -12,6 +12,7 @@ interface Props {
 
 const CartItem: React.FC<Props> = ({ item }) => {
   const {id, title, image, price, amount} = item;
+  const { removeFromCart, addToCart, removeProduct } = useContext(CartContext);
 
   return (
     <div className={styles.cartItem}>
@@ -19,7 +20,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
       <Link to={`/product/${id}`} className={styles.cartItemImage}>
         <img src={image} alt={title} />
       </Link>
-      
+
       <div className={styles.cartItemContent}>
 
         <Link to={`/product/${id}`} className={styles.cartItemTitle}>
@@ -28,11 +29,15 @@ const CartItem: React.FC<Props> = ({ item }) => {
         <div className={styles.cartItemActions}>
 
           <div className={styles.cartItemAmount}>
-            <button className={styles.cartItemAmountButton} onClick={() => {}}>
+            <button className={styles.cartItemAmountButton} 
+            onClick={() => removeFromCart(item)}>
               <IoMdRemove />
             </button>
+
             <span>{amount}</span>
-            <button className={styles.cartItemAmountButton} onClick={() => {}}>
+            
+            <button className={styles.cartItemAmountButton} 
+            onClick={() => addToCart(item)}>
               <IoMdAdd />
             </button>
           </div>
@@ -42,7 +47,8 @@ const CartItem: React.FC<Props> = ({ item }) => {
           </div>
 
           <div className={styles.cartItemRemove}>
-            <button className={styles.cartItemRemoveButton} onClick={() => {}}>
+            <button className={styles.cartItemRemoveButton} 
+            onClick={() => removeProduct(item)}>
               <IoMdClose />
             </button>
           </div>

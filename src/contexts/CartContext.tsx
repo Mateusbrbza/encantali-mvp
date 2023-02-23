@@ -12,7 +12,8 @@ export type CartItemType = {
 type CartContextType = {
   cart: CartItemType[];
   addToCart: (product: Product) => void;
-  removeFromCart: (product: Product) => void;
+  removeFromCart: (item: CartItemType) => void;
+  removeProduct: (product: Product) => void;
 };
 
 interface Props {
@@ -23,21 +24,19 @@ interface Props {
 export const CartContext = createContext<CartContextType>({
   cart: [], 
   addToCart: () => {},
-  removeFromCart: () => {}
+  removeFromCart: () => {},
+  removeProduct: () => {}
 });
 
-const CartProvider = ({children}: Props) => {
-
-  //cart state
+  const CartProvider = ({children}: Props) => {
   const [cart, setCart] = useState<CartItemType[]>([]);
 
-  //add to cart
+  //add to cart and add amount on IoMdAdd
   const addToCart = (product: Product) => {
     const { id, title, price, image } = product;
     const newItem = { id, title, price, image, amount: 1 };
     const cartItem = cart.find((item) => item.id === id);
 
-    // if cart item is already in the cart
     if (cartItem) {
       const newCart = cart.map((item) =>
         item.id === id ? { ...item, amount: item.amount + 1 } : item
@@ -49,14 +48,40 @@ const CartProvider = ({children}: Props) => {
   };
   
   //remove from cart
-  const removeFromCart = (product: Product) => {
-    const { id } = product;
-    const newCart = cart.filter((item) => item.id !== id);
-    setCart(newCart);
-  }
+  const removeFromCart = (item: CartItemType) => {
+    setCart((prev) => {
+      const existingItem = prev.find((i) => i.id === item.id);
+      
+      if (existingItem && existingItem.amount === 1) {
+        return prev.filter((i) => i.id !== item.id);
+      } else if (existingItem) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, amount: i.amount - 1 } : i
+        );
+      } else {
+        return prev;
+      }
+    });
+  };
+
+  // to be used on IoMdClose
+  const removeProduct = (product: Product) => {
+  setCart((prevCart) => {
+    const itemIndex = prevCart.findIndex((item) => item.id === product.id);
+
+    if (itemIndex === -1) {
+      return prevCart;
+    } else {
+      const updatedCart = [...prevCart];
+      updatedCart.splice(itemIndex, 1);
+      return updatedCart;
+    }
+  });
+};
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider 
+    value={{ cart, addToCart, removeFromCart, removeProduct }}>
       {children}
     </CartContext.Provider>
   )

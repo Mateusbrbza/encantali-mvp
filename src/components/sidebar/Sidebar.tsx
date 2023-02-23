@@ -1,20 +1,22 @@
 import React, { useContext } from 'react';
-// import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
-
 import CartItem from '../cart-item/CartItem';
 import {BsBag} from 'react-icons/bs';
 
-
 //contexts
 import { SidebarContext } from '../../contexts/SidebarContext';
-import { CartContext } from '../../contexts/CartContext'; 
+import { CartContext, CartItemType  } from '../../contexts/CartContext'; 
 
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
   const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
   const { cart } = useContext(CartContext);
+
+  const totalPrice = cart.reduce(
+    (total: number, item: CartItemType) => total + item.price * item.amount,
+    0
+  );
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -28,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles.icon}>
               <BsBag />
             </div>
-            <p>Carrinho (0)</p>
+            <p>Carrinho ({cart.length})</p>
           </button>
         </div>
         
@@ -37,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className={styles["close-btn"]} onClick={handleClose}>
               {/* sidebar closed */}
               <button className={styles.button}>
-                <span>Itens no carrinho (0) </span>
+                <span>Itens no carrinho ({cart.length}) </span>
                 <div className={styles.icon}>
                   <BsBag className={styles['sidebar-close']} />
                 </div>
@@ -48,7 +50,19 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                 return <CartItem item={item} key={item.id} />
               })}
             </div>
+            <div>
+              <div className={styles.cartInfo}>
+                {/* total */}
+                <div className={styles.cartTotal}>
+                  <span>Total: R$ {totalPrice.toFixed(0)}</span>
+                </div>
+                {/* finalizar compra */}
+                <div>
+                  <span>Finalizar compra</span>
+                </div>
+              </div>
             </div>
+          </div>
         )}
     </section>
   );
