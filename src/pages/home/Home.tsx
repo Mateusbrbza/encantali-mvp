@@ -19,8 +19,6 @@ const Home = () => {
   return (
     <>
     <Header />
-
-    <div>
       <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.row}>
@@ -35,8 +33,6 @@ const Home = () => {
             </div>
           </div>
       </section>
-    </div>
-
     <Footer />
     </>
   )
