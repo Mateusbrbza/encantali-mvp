@@ -1,7 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {BsEyeFill} from 'react-icons/bs';
-import { GrAdd } from 'react-icons/gr'
 import styles from "./products.module.scss";
 
 //contexts
@@ -27,13 +26,9 @@ const Products = ({ product }: { product: Product }) => {
       <div className={styles.contents}>
         <div>
         <div className={styles.image}>
-          {/* image */}
           <img src={image} alt="produto" />
         </div>
-        {/* buttons */}
       </div>
-
-      {/* category & title & price */}
       <div className={styles.info}>
         <span>{category}</span>
         <Link to={`/product/${id}`} >
@@ -41,16 +36,14 @@ const Products = ({ product }: { product: Product }) => {
         </Link>
         <p>R$ {price}</p>
       </div>
-
       <div className={styles.bottom}>
         <button className={styles.button}
-        onClick={() => addToCart(product, id)}
+        onClick={() => addToCart(product)}
         >
           <div className={styles.icon}>
             <span>Adicionar ao carrinho +</span>
           </div>
         </button>
-        
         <Link to={`/product/${id}`} className={styles.eye} >
           <BsEyeFill />
         </Link>
