@@ -7,7 +7,7 @@
     align-items: center;
     top: 0;
     left: 0;
-    background-color: #fafafa;
+    background-color: $white;
     z-index: 100;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 
@@ -15,7 +15,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        align-items: center;
         column-gap: 1rem;
         padding: 0 2rem;
 
