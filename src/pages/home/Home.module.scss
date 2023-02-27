@@ -4,14 +4,17 @@
 // 2. put a box-shadow on the image
 
 .section {
-  padding: 4rem 2rem;
   display: flex;
   justify-content: center;
   border-radius: 0 0 3rem 3rem;
-  background: $beige;
+  background: #fafafa;
 
   .container {
     padding: 5rem 2.5rem;
+
+    .hero {
+      
+    }
   }
 
   .row {

@@ -1,9 +1,13 @@
 import React from 'react';
-// hero
+import styles from './hero.module.scss';
+// import HeroImg from '../../../public/bg_hero.svg';
+
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <section className={styles.section}>
+      
+    </section>
   )
 }
 

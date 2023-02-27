@@ -1,1 +1,13 @@
 @import "@/styles/variables.scss";
+
+.section {
+    background-color: pink;
+    background-image: url("/public/bg_hero.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 3rem 3rem;
+    height: 80rem;
+}
