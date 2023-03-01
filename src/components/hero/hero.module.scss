@@ -5,9 +5,13 @@
     background-image: url("/public/bg_hero.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 70rem;
+
+    .container {
+        max-width: auto;
+    }
 }
