@@ -1,1 +1,100 @@
 @import "@/styles/variables.scss";
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4.5rem;
+    padding: 8rem 4rem 8rem;
+
+    @include xs {
+        margin-top: 5rem;
+        height: 130vh;
+    }
+
+    @include lg {
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 100%; /* Default max-width for the container class */
+        margin-left: auto;
+        margin-right: auto;
+
+        .product-wrapper {
+            display: flex;
+            align-items: center;
+
+            @include xs {
+                flex-direction: column;
+            }
+
+            @include lg {
+                flex-direction: row;
+            }
+
+            .image {
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 8px;
+
+                @include lg {
+                    margin-bottom: 0;
+                }
+
+                    img {
+                    max-width: 20rem;
+                    border-radius: 0.8rem;
+
+                    @include lg {
+                    max-width: 38rem;
+                    }
+                }
+            }
+
+            .text {
+                flex: 1;
+                display: grid;
+                justify-content: center;
+
+                @include lg {
+                    text-align: left;
+                }
+
+                h1 {
+                    font-size: 30px;
+                    font-weight: 500;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                h2 {
+                    font-size: 1.9rem;
+                    font-weight: 500;
+                    margin-top: 1rem;
+                    margin-bottom: 1.5rem;
+                    color: $green;
+                }
+
+                p {
+                    margin-bottom: 2rem;
+                    font-size: 1.8rem;
+                }
+
+                button {
+                    border: none;
+                    cursor: pointer;
+                    background-color: $green;
+                    color: $white;
+                    padding: 2rem 4rem 2rem 4rem;
+                    align-items: center;
+                    font-size: 1.7rem;
+                    line-height: 2rem;
+                    border-radius: 0.8rem;
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { ProductContext } from '../../contexts/ProductContext';
 import styles from './ProductDetail.module.scss';
+import {FiShoppingCart} from 'react-icons/fi'
 
 // page that will show the selected product from homepage and show it on this component
 const ProductDetail = () => {
@@ -25,17 +26,39 @@ const ProductDetail = () => {
       </section>
     )
   };
-  console.log(product);
+  // console.log(product);
 
   // destructure the product
+  const {title, price, description, image} = product;
+
 
   return (
       <>
       <Header />
 
       <section className={styles.section}>
-        <div>
-          Detalhes do produto
+        <div className={styles.container}>
+
+          <div className={styles["product-wrapper"]}>
+            <div className={styles.image}>
+              <img src={image} alt='' />
+            </div>
+
+            <div className={styles.text}>
+              <h1>
+                {title}
+              </h1>
+              <h2 className={styles.price}>
+                R$ {price}
+              </h2>
+              <p>{description}</p>
+              <button
+              onClick={() => addToCart(product, product.id)}
+              >
+                Adicionar produto ao carrinho <FiShoppingCart/>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       
