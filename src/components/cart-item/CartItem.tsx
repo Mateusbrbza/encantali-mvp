@@ -1,9 +1,8 @@
 import React, {useContext} from 'react';
 import styles from './CartItem.module.scss';
-
 import { Link } from 'react-router-dom';
+
 import { CartItemType, CartContext } from '../../contexts/CartContext';
-//icons
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
 
 interface Props {

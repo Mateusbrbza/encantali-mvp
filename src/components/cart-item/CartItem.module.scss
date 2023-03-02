@@ -1,17 +1,14 @@
 @import "@/styles/variables.scss";
 
-// CartItem.module.scss
-
-// Cart item container
 .cartItem {
   display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #ddd;
   border-radius: 1.1rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  align-items: center;
 
-  // Cart item image
   .cartItemImage {
     width: 10rem;
     margin-right: 1rem;
@@ -28,11 +25,9 @@
     }
   }
 
-  // Cart item content
   .cartItemContent {
     flex: 1;
 
-    // Cart item title
     .cartItemTitle {
       font-size: 1.5rem;
       font-weight: 600;
@@ -45,13 +40,11 @@
       }
     }
 
-    // Cart item actions (amount, price, remove)
     .cartItemActions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
 
-      // Cart item amount
       .cartItemAmount {
         display: flex;
         align-items: center;
@@ -89,7 +82,6 @@
         }
       }
 
-      // Cart item price
       .cartItemPrice {
         font-size: 1.25rem;
         font-weight: 600;
@@ -100,7 +92,6 @@
         }
       }
 
-      // Cart item remove
       .cartItemRemove {
         margin-left: auto;
 
@@ -124,7 +115,6 @@
       }
     }
 
-    // Cart item total
     .cartItemTotal {
       font-size: 1.25rem;
       font-weight: 600;

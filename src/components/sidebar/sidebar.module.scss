@@ -16,7 +16,11 @@
   justify-content: grid;
   gap: 1.2rem;
 
-  .cartTotal {}
+  .cartTotal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .payment {
     .paymentText {
@@ -36,13 +40,13 @@
 
 .button {
   display: flex;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   font-size: 1.2rem;
   color: #333;
   transition: all 0.2s ease-in-out;
@@ -94,8 +98,8 @@
   }
 
   p {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     color: $green;
     margin: 0;
   }
