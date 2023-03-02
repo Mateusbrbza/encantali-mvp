@@ -18,7 +18,6 @@ const ProductDetail = () => {
   const product = products.find(item => {
     return item.id === parseInt(id);
   });
-  // product not found
   if (!product) {
     return (
       <section className={styles["product-not-found"]}>
@@ -26,11 +25,7 @@ const ProductDetail = () => {
       </section>
     )
   };
-  // console.log(product);
-
-  // destructure the product
   const {title, price, description, image} = product;
-
 
   return (
       <>
@@ -53,7 +48,7 @@ const ProductDetail = () => {
               </h2>
               <p>{description}</p>
               <button
-              onClick={() => addToCart(product, product.id)}
+              onClick={() => addToCart(product)}
               >
                 Adicionar produto ao carrinho <FiShoppingCart/>
               </button>
