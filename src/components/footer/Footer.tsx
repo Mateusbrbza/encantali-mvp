@@ -24,7 +24,7 @@ const Footer = () => {
         <Link to={'https://www.instagram.com/use.encantali/'}>
           <AiOutlineInstagram />
         </Link>
-        <Link to={'https://www.instagram.com/use.encantali/'}>
+        <Link to={'https://www.facebook.com/use.encantali'}>
           <AiOutlineFacebook />
         </Link>
       </div>

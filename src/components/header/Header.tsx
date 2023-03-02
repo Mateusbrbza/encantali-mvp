@@ -4,7 +4,7 @@ import { SidebarContext } from '../../contexts/SidebarContext';
 import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
-  const {isOpen, handleClose} = useContext(SidebarContext);
+  const {isOpen} = useContext(SidebarContext);
 
   return (
     <header className={styles.header}>
@@ -17,11 +17,6 @@ const Header: React.FC = () => {
         </div>
 
         <div className={styles.item}>
-          {/* About */}
-          <a href='/products'>Produtos</a>
-        </div>
-
-        <div className={styles.item}>
           {/* About us */}
           <a href='/about'>Sobre nós</a>
         </div>
@@ -29,11 +24,6 @@ const Header: React.FC = () => {
         <div className={styles.item}>
           {/* Contato */}
           <a href='/contact'>Contato</a>
-        </div>
-
-        <div className={styles.item}>
-          {/* Contato */}
-          <a href='/profile'>Perfil</a>
         </div>
 
         <div className={styles.item}>
