@@ -1,1 +1,56 @@
 @import "@/styles/variables.scss";
+
+.footer {
+    border-radius: 3rem 3rem 0 0;
+    width: 100%;
+    bottom: 0;
+    background-color: $beige;
+    padding: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    @include lg {
+        display: grid;
+        grid-template-areas:
+        "one two"
+        "three four";
+    }
+}
+
+.icon {
+    font-size: 3rem;
+    line-height: 3.8rem;
+    color: $green;
+}
+
+.text {
+    color: $green;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    text-align: center;
+
+    @include lg {
+        text-align: end;
+        align-self: flex-end;
+    }
+}
+
+.mateus-text {
+    color: $green;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 3rem;
+    font-size: 3rem;
+    line-height: 3.8rem;
+    color: $green;
+
+    @include lg {
+        justify-content: end;
+    }
+}
