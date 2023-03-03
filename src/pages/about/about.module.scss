@@ -1,1 +1,78 @@
 @import "@/styles/variables.scss";
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4.5rem;
+
+    .about__text {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    img {
+        max-width: 50rem;
+        border-radius: 0.8rem;
+    }
+
+    .text {
+        font-size: 2.3rem;
+        line-height: 2.4rem;
+        color: $green;
+
+        p {
+            color: $green;
+            font-weight: 300;
+            font-family: "Montserrat";
+        }
+    }
+
+    // BREAKPOINTS
+  @include sm {
+    .about__text {
+      padding: 4rem;
+
+      img {
+        max-width: 30rem;
+      }
+    }
+  }
+
+  @include md {
+    .about__text {
+      padding: 6rem;
+
+      img {
+        max-width: 40rem;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  @include lg {
+
+    .flex__wrapper {
+      padding: 5rem;
+      display: flex;
+      justify-content: center;
+      gap: 8rem;
+    }
+
+    .about__text {
+      padding: 0;
+      width: 50%;
+    }
+  }
+
+  @include xl {
+    .flex__wrapper {
+      gap: 12rem;
+    }
+  }
+
+}
