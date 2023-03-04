@@ -85,7 +85,6 @@ const About = () => {
         </p>
       </>
     )
-
   }
 
   return (
@@ -94,7 +93,7 @@ const About = () => {
       <section className={styles.section}>
         <div className={styles.flex__wrapper}>
           <div className={styles.about__image}>
-            <img src={logo} />
+            <img src={logo} alt='Thainá e Thamires' />
           </div>
           <div className={styles.about__text}>
               <div className={styles.text}>
