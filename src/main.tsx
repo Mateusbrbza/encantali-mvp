@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "@/styles/globals.scss";
 
 //pages
 import Home from "./pages/home/Home";
@@ -9,13 +10,12 @@ import Contact from "./pages/contact/Contact";
 import Products from "./pages/products/Products";
 import ProductDetail from "./pages/product-detail/ProductDetail";
 import Profile from "./pages/profile/Profile";
-import "@/styles/globals.scss";
+import Payment from "./pages/payment/Payment";
 
 //providers
 import ProductProvider from "./contexts/ProductContext";
 import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
-import Payment from "./pages/payment/Payment";
 
 const router = createBrowserRouter([
   {
