@@ -85,7 +85,7 @@ export const CartContext = createContext<CartContextType>({
       cart, 
       addToCart, 
       removeFromCart, 
-      removeProduct 
+      removeProduct,
       }}>
       {children}
     </CartContext.Provider>
