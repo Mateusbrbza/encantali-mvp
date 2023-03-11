@@ -6,7 +6,7 @@ import logo from '/encantali-owners.jpeg';
 
 const About = () => {
   const getAboutPageText = () => {
-    if (window.innerWidth < 920) {
+    if (window.innerWidth < 700) {
       return (
         <>
           <p>

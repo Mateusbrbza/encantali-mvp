@@ -22,11 +22,6 @@ const Header: React.FC = () => {
         </div>
 
         <div className={styles.item}>
-          {/* Contato */}
-          <a href='/contact'>Contato</a>
-        </div>
-
-        <div className={styles.item}>
           {/* Cart */}
           <Sidebar />
         </div>
