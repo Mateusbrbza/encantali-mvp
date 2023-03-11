@@ -5,27 +5,33 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { ProductContext } from '../../contexts/ProductContext';
 import styles from './ProductDetail.module.scss';
-import {FiShoppingCart} from 'react-icons/fi'
+import { FiShoppingCart } from 'react-icons/fi';
 
 // page that will show the selected product from homepage and show it on this component
-const ProductDetail = () => {
-  // getting product id 
+const ProductDetail = () => { 
   const { id } = useParams<{ id: string }>();
-  const {products} = useContext(ProductContext);
-  const {addToCart} = useContext(CartContext);
+  const { products } = useContext(ProductContext);
+  const { addToCart } = useContext(CartContext);
 
-  // get the single product based on the id
-  const product = products.find(item => {
-    return item.id === parseInt(id);
-  });
-  if (!product) {
+  if (!id) {
     return (
       <section className={styles["product-not-found"]}>
         Carregando...
       </section>
-    )
-  };
-  const {title, price, description, image} = product;
+    );
+  }
+
+  const product = products.find(item => item.id === parseInt(id));
+
+  if (!product) {
+    return (
+      <section className={styles["product-not-found"]}>
+        Produto não encontrado.
+      </section>
+    );
+  }
+
+  const { title, price, description, image } = product;
 
   return (
       <>
